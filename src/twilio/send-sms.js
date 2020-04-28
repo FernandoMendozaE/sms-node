@@ -1,6 +1,5 @@
-const config = require('../config')
-const client = require('twilio')(config.accountSind, config.authToken)
-// const client = require('twilio')('AC8c404d2765c7ec8b27a18c7ac7cd6536', 'dc73ad4953c32c754123cd378a5a13f9')
+const config = require('../config');
+const client = require('twilio')(config.accountSind, config.authToken);
 
 /**
  * Send an SMS message
@@ -13,13 +12,13 @@ async function sendMessage(body, phone) {
     const message = await client.messages.create({
       to: '+591' + phone,
       from: '+14795515241',
-      body
-    })
-    // console.log(message.sid)
-    return message
+      body,
+    });
+    console.log(message);
+    return message;
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 } // TODO: método encargado de enviar el mensaje twilio
 
-module.exports = { sendMessage }
+module.exports = { sendMessage };
