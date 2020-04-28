@@ -2,6 +2,6 @@ const app = require('./server');
 
 require('./database');
 
-app.listen(3000, () => {
-  console.log(`Server started on port 3000`);
+app.listen(app.get('port'), () => {
+  console.log(`Server started on port ${app.get('port')}`);
 });
