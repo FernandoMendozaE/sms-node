@@ -13,7 +13,8 @@ app.engine(
     layoutsDir: path.join(app.get('views'), 'layouts'), // obtiene la direccion de la carpeta view y lo une a la carpeta layouts
     partialsDir: path.join(app.get('views'), 'partials'),
     defaultLayout: 'main',
-    extname: '.hbs'
+    extname: '.hbs',
+    helpers: require('./libs/handlebars')
   })
 ) // TODO: motor de plantilla
 app.set('view engine', '.hbs') // TODO: set: configuración
