@@ -13,17 +13,20 @@
     </form>
   </div>
   <div class="col-md-8">
-    <div class="card card-body">
-      {{#if messages}}
-        {{#each messages }}
-          <div class="card card-body">
-            <p>{{Body}}</p>
-            <span>{{hideNumber To}}</span>
-          </div>
-        {{/each}}
-      {{else}}
-        <p>No message yet</p>
-      {{/if}}
-    </div>
+    {{#if messages}}
+    <ul class="list-group" style="height: 70vh; overflow-y: auto;" id="messages">
+      {{#each messages }}
+      <li class="list-group-item list-group-item-info list-group-item-action">
+        <p>{{Body}}</p>
+        <p>{{_id}}</p>
+        <span>{{hideNumber To}}</span>
+        <span>{{From}}</span>
+        <span>{{timeago createdAt}}</span>
+      </li>
+      {{/each}}
+    </ul>
+    {{else}}
+    <p>No message yet</p>
+    {{/if}}
   </div>
 </div>

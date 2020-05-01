@@ -1,18 +1,21 @@
-const { Schema, model } = require('mongoose')
+const { Schema, model } = require('mongoose');
 
 const newSchema = new Schema(
   {
     Body: {
       type: String,
-      required: true
+      required: true,
+    },
+    From: {
+      type: String,
     },
     To: {
-      type: String
-    }
+      type: String,
+    },
   },
   {
-    timestamps: true
+    timestamps: true,
   }
-)
+);
 
-module.exports = model('sms', newSchema)
+module.exports = model('sms', newSchema);
