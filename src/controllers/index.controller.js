@@ -32,6 +32,9 @@ const postMenssage = async (req, res) => {
   res.redirect('/'); // TODO: redireccionar en express
 };
 
+/**
+ * Método encargado de recibir el mensaje de twilio
+ */
 const reciveMessage = async (req, res) => {
   // console.log(req.body);
   const savedSMS = await SMS.create({
